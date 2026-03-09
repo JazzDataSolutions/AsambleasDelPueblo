@@ -87,9 +87,9 @@ export default function Navbar() {
           className="flex items-center gap-2 transition-opacity hover:opacity-80 focus-visible:opacity-80"
         >
           <img
-            src="/logo-aps.svg"
+            src="/logo-aps-crop.png"
             alt="Logo Asambleas del Pueblo Soberano"
-            className="h-12 w-auto"
+            className="h-10 w-auto sm:h-12"
           />
         </Link>
 

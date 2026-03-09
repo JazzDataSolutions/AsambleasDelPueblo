@@ -62,16 +62,9 @@ export default function Home() {
         <div className="bg-gradient-hero absolute inset-0" />
         <div className="relative mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 sm:py-32 lg:px-8">
           <img
-            src="/logo-aps.svg"
+            src="/logo-aps-crop.png"
             alt="Logo Asambleas del Pueblo Soberano"
-            className="animate-fade-in-up mx-auto mb-6 h-32 w-auto sm:h-40"
-          />
-          <img
-            src="/serpiente.svg"
-            alt=""
-            aria-hidden="true"
-            className="animate-fade-in-up mx-auto mb-8 h-12 w-auto opacity-60 sm:h-16"
-            style={{ animationDelay: "40ms" }}
+            className="animate-fade-in-up mx-auto mb-8 h-28 w-auto sm:h-36"
           />
           <p className="animate-fade-in-up mb-4 inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary" style={{ animationDelay: "80ms" }}>
             Democracia Participativa

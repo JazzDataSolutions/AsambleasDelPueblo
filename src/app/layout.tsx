@@ -22,7 +22,10 @@ export const metadata: Metadata = {
   description:
     "Plataforma de democracia participativa. Organización, documentos, herramientas y contenidos para la construcción del poder popular desde la base.",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
     apple: "/apple-touch-icon.png",
   },
   openGraph: {

@@ -50,7 +50,7 @@ export default function Footer() {
         {/* Top: Brand + Social */}
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <img src="/logo-aps.svg" alt="Asambleas del Pueblo Soberano" className="h-12 w-auto" />
+            <img src="/logo-aps-crop.png" alt="Asambleas del Pueblo Soberano" className="h-10 w-auto" />
             <p className="mt-2 text-sm text-muted">
               Democracia participativa desde la base.
             </p>
