@@ -24,15 +24,15 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "48x48" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: "/icons/apple-touch-icon.png",
   },
   openGraph: {
     title: "Asambleas del Pueblo Soberano",
     description:
       "Plataforma de democracia participativa. Organización, documentos, herramientas y contenidos para la construcción del poder popular desde la base.",
-    images: [{ url: "/logo-aps.jpg", width: 1183, height: 1600 }],
+    images: [{ url: "/images/logo-original.jpg", width: 1183, height: 1600 }],
   },
 };
 

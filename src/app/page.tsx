@@ -62,7 +62,7 @@ export default function Home() {
         <div className="bg-gradient-hero absolute inset-0" />
         <div className="relative mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 sm:py-32 lg:px-8">
           <img
-            src="/logo-aps-crop.png"
+            src="/images/logo.png"
             alt="Logo Asambleas del Pueblo Soberano"
             className="animate-fade-in-up mx-auto mb-8 h-28 w-auto sm:h-36"
           />

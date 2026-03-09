@@ -87,10 +87,14 @@ export default function Navbar() {
           className="flex items-center gap-2 transition-opacity hover:opacity-80 focus-visible:opacity-80"
         >
           <img
-            src="/logo-aps-crop.png"
-            alt="Logo Asambleas del Pueblo Soberano"
-            className="h-10 w-auto sm:h-12"
+            src="/images/serpiente-icon.png"
+            alt=""
+            aria-hidden="true"
+            className="h-8 w-auto sm:h-10"
           />
+          <span className="text-lg font-bold tracking-tight text-primary sm:text-xl">
+            Asambleas del Pueblo Soberano
+          </span>
         </Link>
 
         {/* Desktop nav */}
