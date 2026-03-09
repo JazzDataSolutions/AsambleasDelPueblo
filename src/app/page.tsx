@@ -47,11 +47,6 @@ const sections = [
   },
 ];
 
-const stats = [
-  { value: "32", label: "Estados" },
-  { value: "500+", label: "Asambleas" },
-  { value: "10k+", label: "Participantes" },
-];
 
 export default function Home() {
   return (
@@ -92,18 +87,6 @@ export default function Home() {
           </div>
 
           {/* Stats */}
-          <div className="animate-fade-in-up mt-16 flex items-center justify-center gap-8 sm:gap-12" style={{ animationDelay: "400ms" }}>
-            {stats.map(({ value, label }) => (
-              <div key={label} className="text-center">
-                <p className="text-2xl font-bold tabular-nums text-foreground sm:text-3xl">
-                  {value}
-                </p>
-                <p className="mt-1 text-xs font-medium uppercase tracking-wider text-muted">
-                  {label}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
