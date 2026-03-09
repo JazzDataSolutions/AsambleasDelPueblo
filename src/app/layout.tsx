@@ -21,6 +21,16 @@ export const metadata: Metadata = {
   },
   description:
     "Plataforma de democracia participativa. Organización, documentos, herramientas y contenidos para la construcción del poder popular desde la base.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    title: "Asambleas del Pueblo Soberano",
+    description:
+      "Plataforma de democracia participativa. Organización, documentos, herramientas y contenidos para la construcción del poder popular desde la base.",
+    images: [{ url: "/logo-aps.jpg", width: 1183, height: 1600 }],
+  },
 };
 
 export default function RootLayout({

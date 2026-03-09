@@ -1,0 +1,20 @@
+<svg width="400" height="260" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bastón de mando -->
+  <g transform="rotate(-45 100 150)">
+    <rect x="95" y="50" width="10" height="200" rx="5" fill="#6B3A2A" />
+    <path d="M100,40 Q110,35 100,25 Q90,35 100,40" fill="#6B3A2A" />
+    <!-- Listones -->
+    <path d="M95,60 Q60,70 40,110" stroke="#1B7A3D" stroke-width="3.5" fill="none" stroke-linecap="round" />
+    <path d="M95,65 Q65,80 50,120" stroke="#2856A3" stroke-width="3.5" fill="none" stroke-linecap="round" />
+    <path d="M95,70 Q70,90 60,130" stroke="#D4A017" stroke-width="3.5" fill="none" stroke-linecap="round" />
+    <path d="M95,75 Q75,100 70,140" stroke="#C23B4E" stroke-width="3.5" fill="none" stroke-linecap="round" />
+  </g>
+  <!-- Texto -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#5B2020">
+    <text x="145" y="130" font-size="36" font-weight="400" letter-spacing="1">Asambleas</text>
+    <text x="145" y="168" font-size="24" font-weight="400">del</text>
+    <text x="185" y="168" font-size="36" font-weight="700">Pueblo</text>
+    <line x1="140" y1="180" x2="340" y2="180" stroke="#2D8B57" stroke-width="2.5" />
+    <text x="140" y="230" font-size="48" font-weight="700" letter-spacing="2">Soberano</text>
+  </g>
+</svg>

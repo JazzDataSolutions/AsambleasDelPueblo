@@ -49,16 +49,11 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         {/* Top: Brand + Social */}
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-3">
-            <img src="/logo-aps.jpg" alt="" className="h-10 w-auto" aria-hidden="true" />
-            <div>
-              <p className="text-lg font-bold tracking-tight text-primary">
-                Asambleas del Pueblo Soberano
-              </p>
-              <p className="mt-1 text-sm text-muted">
-                Democracia participativa desde la base.
-              </p>
-            </div>
+          <div>
+            <img src="/logo-aps.svg" alt="Asambleas del Pueblo Soberano" className="h-12 w-auto" />
+            <p className="mt-2 text-sm text-muted">
+              Democracia participativa desde la base.
+            </p>
           </div>
           <div className="flex gap-2">
             {socialLinks.map(({ label, href, Icon }) => (
