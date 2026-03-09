@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Asambleas del Pueblo",
-    template: "%s | Asambleas del Pueblo",
+    default: "Asambleas del Pueblo Soberano",
+    template: "%s | Asambleas del Pueblo Soberano",
   },
   description:
     "Plataforma de democracia participativa. Organización, documentos, herramientas y contenidos para la construcción del poder popular desde la base.",

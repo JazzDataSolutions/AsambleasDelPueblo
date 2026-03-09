@@ -86,8 +86,13 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-2 transition-opacity hover:opacity-80 focus-visible:opacity-80"
         >
-          <span className="text-lg font-bold tracking-tight text-accent sm:text-xl">
-            Asambleas del Pueblo
+          <img
+            src="/logo-aps.jpg"
+            alt="Logo Asambleas del Pueblo Soberano"
+            className="h-10 w-auto"
+          />
+          <span className="text-lg font-bold tracking-tight text-primary sm:text-xl">
+            Asambleas del Pueblo Soberano
           </span>
         </Link>
 

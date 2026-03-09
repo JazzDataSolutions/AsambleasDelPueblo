@@ -49,13 +49,16 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         {/* Top: Brand + Social */}
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="text-lg font-bold tracking-tight text-accent">
-              Asambleas del Pueblo
-            </p>
-            <p className="mt-1 text-sm text-muted">
-              Democracia participativa desde la base.
-            </p>
+          <div className="flex items-center gap-3">
+            <img src="/logo-aps.jpg" alt="" className="h-10 w-auto" aria-hidden="true" />
+            <div>
+              <p className="text-lg font-bold tracking-tight text-primary">
+                Asambleas del Pueblo Soberano
+              </p>
+              <p className="mt-1 text-sm text-muted">
+                Democracia participativa desde la base.
+              </p>
+            </div>
           </div>
           <div className="flex gap-2">
             {socialLinks.map(({ label, href, Icon }) => (
@@ -100,7 +103,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-10 border-t border-border pt-6 text-center">
           <p className="text-xs text-muted-light">
-            Asambleas del Pueblo. Todos los derechos reservados.
+            Asambleas del Pueblo Soberano. Todos los derechos reservados.
           </p>
         </div>
       </div>

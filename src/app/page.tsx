@@ -61,17 +61,22 @@ export default function Home() {
         <div className="bg-dot-pattern absolute inset-0 opacity-40" />
         <div className="bg-gradient-hero absolute inset-0" />
         <div className="relative mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 sm:py-32 lg:px-8">
-          <p className="animate-fade-in-up mb-4 inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent">
+          <img
+            src="/logo-aps.jpg"
+            alt="Logo Asambleas del Pueblo Soberano"
+            className="animate-fade-in-up mx-auto mb-6 h-28 w-auto sm:h-36"
+          />
+          <p className="animate-fade-in-up mb-4 inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary" style={{ animationDelay: "80ms" }}>
             Democracia Participativa
           </p>
-          <h1 className="animate-fade-in-up text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl" style={{ animationDelay: "80ms" }}>
-            Asambleas del Pueblo
+          <h1 className="animate-fade-in-up text-4xl font-bold tracking-tight text-primary sm:text-5xl lg:text-6xl" style={{ animationDelay: "160ms" }}>
+            Asambleas del Pueblo Soberano
           </h1>
-          <p className="animate-fade-in-up mx-auto mt-6 max-w-2xl text-lg leading-8 text-muted sm:text-xl" style={{ animationDelay: "160ms" }}>
+          <p className="animate-fade-in-up mx-auto mt-6 max-w-2xl text-lg leading-8 text-muted sm:text-xl" style={{ animationDelay: "240ms" }}>
             Construyendo poder popular desde la base. Un espacio para la
             organización, la reflexión y la acción colectiva.
           </p>
-          <div className="animate-fade-in-up mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center" style={{ animationDelay: "240ms" }}>
+          <div className="animate-fade-in-up mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center" style={{ animationDelay: "320ms" }}>
             <Link
               href="/contacto"
               className="w-full rounded-full bg-accent px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-all hover:bg-accent-dark hover:shadow-xl hover:shadow-accent/30 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 sm:w-auto"
@@ -87,7 +92,7 @@ export default function Home() {
           </div>
 
           {/* Stats */}
-          <div className="animate-fade-in-up mt-16 flex items-center justify-center gap-8 sm:gap-12" style={{ animationDelay: "320ms" }}>
+          <div className="animate-fade-in-up mt-16 flex items-center justify-center gap-8 sm:gap-12" style={{ animationDelay: "400ms" }}>
             {stats.map(({ value, label }) => (
               <div key={label} className="text-center">
                 <p className="text-2xl font-bold tabular-nums text-foreground sm:text-3xl">
