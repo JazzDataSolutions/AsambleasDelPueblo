@@ -47,18 +47,46 @@ export default function Footer() {
   return (
     <footer className="border-t border-border bg-card" aria-label="Pie de página">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        {/* Top: Brand + Social */}
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-lg font-bold tracking-tight text-accent">
+              Asambleas del Pueblo
+            </p>
+            <p className="mt-1 text-sm text-muted">
+              Democracia participativa desde la base.
+            </p>
+          </div>
+          <div className="flex gap-2">
+            {socialLinks.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                aria-label={label}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-accent hover:bg-accent/10 hover:text-accent focus-visible:border-accent focus-visible:text-accent"
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="my-8 border-t border-border" />
+
+        {/* Links grid */}
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h3 className="text-sm font-semibold text-accent">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-accent">
                 {section.title}
               </h3>
-              <ul className="mt-3 space-y-2">
+              <ul className="mt-3 space-y-2.5">
                 {section.links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-muted transition-colors hover:text-accent"
+                      className="text-sm text-muted transition-colors hover:text-foreground"
                     >
                       {link.label}
                     </Link>
@@ -69,22 +97,11 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-col items-center gap-4 border-t border-border pt-8 sm:flex-row sm:justify-between">
-          <p className="text-sm text-muted">
-            Asambleas del Pueblo &mdash; Democracia participativa desde la base.
+        {/* Bottom */}
+        <div className="mt-10 border-t border-border pt-6 text-center">
+          <p className="text-xs text-muted-light">
+            Asambleas del Pueblo. Todos los derechos reservados.
           </p>
-          <div className="flex gap-3">
-            {socialLinks.map(({ label, href, Icon }) => (
-              <a
-                key={label}
-                href={href}
-                aria-label={label}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-accent hover:text-accent focus-visible:border-accent focus-visible:text-accent"
-              >
-                <Icon className="h-4 w-4" />
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </footer>

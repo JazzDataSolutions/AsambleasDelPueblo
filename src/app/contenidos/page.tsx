@@ -1,4 +1,6 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import SectionHero from "@/components/SectionHero";
 import {
   MicPodcast,
@@ -13,12 +15,6 @@ import {
   Clipboard,
   Building,
 } from "@/components/Icons";
-
-export const metadata: Metadata = {
-  title: "Contenidos",
-  description:
-    "Entrevistas, análisis, historia, democracia participativa, convocatorias y más.",
-};
 
 const temas = [
   {
@@ -100,52 +96,71 @@ const temas = [
   },
 ];
 
-const categories = [
-  "Todos",
-  "Producción",
-  "Educativo",
-  "Análisis",
-  "Organización",
-];
+const categories = ["Todos", "Producción", "Educativo", "Análisis", "Organización"];
+
+const categoryColors: Record<string, string> = {
+  Producción: "bg-accent/10 text-accent",
+  Educativo: "bg-secondary/10 text-secondary",
+  Análisis: "bg-blue-500/10 text-blue-600 dark:text-blue-400",
+  Organización: "bg-purple-500/10 text-purple-600 dark:text-purple-400",
+};
 
 export default function ContenidosPage() {
+  const [activeCategory, setActiveCategory] = useState("Todos");
+
+  const filtered =
+    activeCategory === "Todos"
+      ? temas
+      : temas.filter((t) => t.category === activeCategory);
+
   return (
     <>
       <SectionHero
         title="Temas para Contenidos"
         description="Ideas, análisis y producción de contenido para alimentar la reflexión y la acción."
+        breadcrumbs={[{ label: "Contenidos" }]}
       />
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-        {/* Categories */}
-        <div className="mb-8 flex flex-wrap gap-2" role="list" aria-label="Categorías">
+        {/* Category filters */}
+        <div className="mb-10 flex flex-wrap gap-2" role="group" aria-label="Filtrar por categoría">
           {categories.map((cat) => (
-            <span
+            <button
               key={cat}
-              role="listitem"
-              className="cursor-pointer rounded-full border border-border px-4 py-1.5 text-sm text-muted transition-colors hover:border-accent hover:text-accent"
+              type="button"
+              onClick={() => setActiveCategory(cat)}
+              className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
+                activeCategory === cat
+                  ? "bg-accent text-white shadow-sm"
+                  : "border border-border text-muted hover:border-accent hover:text-accent"
+              }`}
+              aria-pressed={activeCategory === cat}
             >
               {cat}
-            </span>
+            </button>
           ))}
         </div>
 
         {/* Content grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {temas.map(({ title, description, category, Icon }) => (
+        <div className="stagger-children grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {filtered.map(({ title, description, category, Icon }) => (
             <div
               key={title}
-              className="flex flex-col rounded-lg border border-border bg-card p-6 transition-all hover:border-accent/50 hover:shadow-sm"
+              className="flex flex-col rounded-xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5"
             >
               <div className="flex items-start justify-between">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent">
                   <Icon className="h-5 w-5" />
                 </div>
-                <span className="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent">
+                <span
+                  className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
+                    categoryColors[category] ?? "bg-accent/10 text-accent"
+                  }`}
+                >
                   {category}
                 </span>
               </div>
-              <h3 className="mt-3 text-lg font-semibold text-foreground">
+              <h3 className="mt-4 text-lg font-semibold text-foreground">
                 {title}
               </h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
@@ -154,6 +169,12 @@ export default function ContenidosPage() {
             </div>
           ))}
         </div>
+
+        {filtered.length === 0 && (
+          <p className="py-12 text-center text-muted">
+            No hay contenidos en esta categoría.
+          </p>
+        )}
       </section>
     </>
   );

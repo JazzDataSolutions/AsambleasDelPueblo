@@ -52,25 +52,27 @@ export default function HerramientasDigitalesPage() {
       <SectionHero
         title="Herramientas Digitales"
         description="Tecnología al servicio de la participación. Consulta, debate y decide desde cualquier lugar."
+        breadcrumbs={[{ label: "Herramientas Digitales" }]}
+        accent="secondary"
       />
 
       <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="stagger-children grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {herramientas.map(({ title, description, status, Icon }) => (
             <div
               key={title}
-              className="flex flex-col rounded-lg border border-border bg-card p-6 transition-all hover:border-accent/50 hover:shadow-sm"
+              className="flex flex-col rounded-xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-1 hover:border-secondary/40 hover:shadow-lg hover:shadow-secondary/5"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary/10 text-secondary">
                 <Icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-3 text-lg font-semibold text-foreground">
+              <h3 className="mt-4 text-lg font-semibold text-foreground">
                 {title}
               </h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
                 {description}
               </p>
-              <span className="mt-4 inline-flex w-fit rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
+              <span className="mt-4 inline-flex w-fit animate-pulse items-center rounded-full border border-secondary/30 bg-secondary/10 px-3 py-1 text-xs font-medium text-secondary">
                 {status}
               </span>
             </div>

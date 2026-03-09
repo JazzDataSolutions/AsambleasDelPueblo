@@ -41,19 +41,24 @@ export default function SolicitudEquiposPage() {
       <SectionHero
         title="Solicitud de Equipos"
         description="Solicita los equipos que tu asamblea necesita para funcionar de manera efectiva."
+        breadcrumbs={[
+          { label: "Herramientas", href: "/herramientas-digitales" },
+          { label: "Solicitud de Equipos" },
+        ]}
+        accent="secondary"
       />
 
       <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="stagger-children grid gap-6 sm:grid-cols-2">
           {equipos.map(({ name, description, Icon }) => (
             <div
               key={name}
-              className="rounded-lg border border-border bg-card p-6 transition-all hover:border-accent/50 hover:shadow-sm"
+              className="rounded-xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-1 hover:border-secondary/40 hover:shadow-lg hover:shadow-secondary/5"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary/10 text-secondary">
                 <Icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-3 text-lg font-semibold text-foreground">
+              <h3 className="mt-4 text-lg font-semibold text-foreground">
                 {name}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">
@@ -64,7 +69,7 @@ export default function SolicitudEquiposPage() {
         </div>
 
         {/* Formulario de solicitud */}
-        <div className="mt-12 rounded-lg border border-border bg-card p-8">
+        <div className="mt-12 rounded-xl border border-border bg-card p-6 sm:p-8">
           <h2 className="text-xl font-bold text-foreground">
             Formulario de Solicitud
           </h2>
@@ -83,9 +88,10 @@ export default function SolicitudEquiposPage() {
                 id="asamblea"
                 name="asamblea"
                 type="text"
+                required
                 autoComplete="off"
-                className="mt-1 w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-                placeholder="Asamblea de&hellip;"
+                className="mt-1.5 w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-foreground placeholder:text-muted-light focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                placeholder="Asamblea de…"
               />
             </div>
             <div>
@@ -99,9 +105,10 @@ export default function SolicitudEquiposPage() {
                 id="ubicacion"
                 name="ubicacion"
                 type="text"
+                required
                 autoComplete="address-level1"
-                className="mt-1 w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-                placeholder="Estado, municipio&hellip;"
+                className="mt-1.5 w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-foreground placeholder:text-muted-light focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                placeholder="Estado, municipio…"
               />
             </div>
             <div>
@@ -115,9 +122,10 @@ export default function SolicitudEquiposPage() {
                 id="contacto-nombre"
                 name="contacto-nombre"
                 type="text"
+                required
                 autoComplete="name"
-                className="mt-1 w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-                placeholder="Tu nombre&hellip;"
+                className="mt-1.5 w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-foreground placeholder:text-muted-light focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                placeholder="Tu nombre…"
               />
             </div>
             <div>
@@ -131,9 +139,10 @@ export default function SolicitudEquiposPage() {
                 id="contacto-email"
                 name="contacto-email"
                 type="email"
+                required
                 autoComplete="email"
                 spellCheck={false}
-                className="mt-1 w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                className="mt-1.5 w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-foreground placeholder:text-muted-light focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 placeholder="tu@correo.com"
               />
             </div>
@@ -146,13 +155,13 @@ export default function SolicitudEquiposPage() {
                   {equipos.map(({ name }) => (
                     <label
                       key={name}
-                      className="flex cursor-pointer items-center gap-2 rounded-md border border-border px-3 py-2 text-sm transition-colors hover:border-accent/50"
+                      className="flex cursor-pointer items-center gap-2 rounded-lg border border-border px-3 py-2.5 text-sm transition-colors hover:border-secondary/50 hover:bg-secondary/5 has-[:checked]:border-secondary has-[:checked]:bg-secondary/10"
                     >
                       <input
                         type="checkbox"
                         name="equipos"
                         value={name}
-                        className="accent-accent"
+                        className="accent-secondary"
                       />
                       <span>{name}</span>
                     </label>
@@ -170,17 +179,18 @@ export default function SolicitudEquiposPage() {
               <textarea
                 id="justificacion"
                 name="justificacion"
+                required
                 rows={3}
-                className="mt-1 w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-                placeholder="Explica brevemente por qué necesitas estos equipos&hellip;"
+                className="mt-1.5 w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-foreground placeholder:text-muted-light focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                placeholder="Explica brevemente por qué necesitas estos equipos…"
               />
             </div>
             <div className="sm:col-span-2">
               <button
                 type="submit"
-                className="rounded-full bg-accent px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-dark focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                className="w-full rounded-full bg-secondary px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-secondary/25 transition-all hover:bg-secondary-dark hover:shadow-xl focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 sm:w-auto"
               >
-                Enviar solicitud
+                Enviar Solicitud
               </button>
             </div>
           </form>
